@@ -1,3 +1,11 @@
+<?php
+ini_set('display_errors', 1); // エラーを表示する設定
+error_reporting(E_ALL);       // 全てのエラーを報告する設定
+?>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
