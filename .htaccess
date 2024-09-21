@@ -3,3 +3,4 @@ DirectoryIndex index.php index.html
 <FilesMatch "\.svg$">
     SetHandler none
 </FilesMatch>
+

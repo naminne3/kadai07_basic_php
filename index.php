@@ -4,8 +4,6 @@ error_reporting(E_ALL);       // 全てのエラーを報告する設定
 ?>
 
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,18 +43,32 @@ error_reporting(E_ALL);       // 全てのエラーを報告する設定
 
     <label for="memory">思い出:</label>
 
+    <?php
+    // ここで $memory 変数を初期化
+    $memory = isset($memory) ? $memory : '';
+?>
+
     <textarea id="memory" name="memory" rows="5" cols="40"><?php echo $memory; ?></textarea><br><br>
 
 
     <button type="submit">登録</button>
   </form>
 
+
+
   <h2>訪問先一覧</h2>
 
   <div id="mapContainer">
+
+    <!-- japan.svg ファイルの内容を直接読み込んで表示 -->
     <svg id="japan-map" viewBox="0 0 1000 1000">
-      <?php include 'japan.svg'; ?>
-    </svg>
+          <?php
+          // SVGの内容を直接出力せず、一旦変数に読み込む
+          $svgContent = file_get_contents('japan.svg');
+          echo $svgContent; // ここで出力
+          ?>
+        </svg>
+」
   </div>
 
   <div id="tableContainer">
