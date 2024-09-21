@@ -17,11 +17,15 @@
 
     // CSVファイルに書き込み
     $file = fopen('record.csv', 'a'); 
-    fputcsv($file, $data); 
+    fputcsv($file, $data);
+    fwrite($file, "\n"); // 強制的に改行を追加 
     fclose($file); 
   }
+
 
   // index.phpへリダイレクト
   header('Location: index.php'); 
   exit;
 ?>
+
+

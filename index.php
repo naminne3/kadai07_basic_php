@@ -68,7 +68,6 @@ error_reporting(E_ALL);       // 全てのエラーを報告する設定
           echo $svgContent; // ここで出力
           ?>
         </svg>
-」
   </div>
 
   <div id="tableContainer">
