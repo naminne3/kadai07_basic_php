@@ -12,20 +12,16 @@
       $_POST['date'],
       $_POST['prefecture'],
       $_POST['companion'],
-      $_POST['memory']
+      trim($_POST['memory']) // trim() 関数で空白文字や特殊文字を削除
     ];
 
     // CSVファイルに書き込み
     $file = fopen('record.csv', 'a'); 
-    fputcsv($file, $data);
-    fwrite($file, "\n"); // 強制的に改行を追加 
+    fputcsv($file, $data); // fputcsvは自動的に改行を行うので、fwriteは不要
     fclose($file); 
   }
-
 
   // index.phpへリダイレクト
   header('Location: index.php'); 
   exit;
 ?>
-
-

@@ -89,7 +89,7 @@ error_reporting(E_ALL);       // 全てのエラーを報告する設定
             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
               echo "<tr>";
               foreach ($data as $value) {
-                echo "<td>" . htmlspecialchars($value) . "</td>";
+                echo "<td>" . htmlspecialchars($value ?? '') . "</td>"; 
               }
               // 編集・削除ボタンを追加
               echo "<td>";
